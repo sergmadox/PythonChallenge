@@ -1,6 +1,6 @@
 #!/bin/python
 try:
-  num = int(input('Сюда число'))
+  num = float(input('Сюда число'))
   if num%3 == 0: print (True)
   else: print (False)
 except ValueError:
