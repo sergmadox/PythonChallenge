@@ -1,9 +1,7 @@
 #!/bin/python
 try:
-  number = input('Сюда число: ')
-  if int(number)%3==0:
-    print ('True')
-  else:
-    print ('False')
+  num = int(input('Сюда число'))
+  if num%3 == 0: print (True)
+  else: print (False)
 except ValueError:
   pass
