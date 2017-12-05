@@ -1,7 +1,0 @@
-polyndrom = str(input('Сюда число '))
-if len(polyndrom) == 1:
-    pass
-elif int(polyndrom) == int (polyndrom[::-1]):
-    print (True)
-else:
-    print (False)
