@@ -1,0 +1,14 @@
+def decorator_for_untouchable(function):
+  def counter(*args):
+    print (args[0])
+    function(*args)
+  return counter
+
+@decorator_for_untouchable
+def untouchable_function(n):
+    if n == 0:
+        return
+    untouchable_function(n-1)
+
+if __name__ == '__main__':
+    untouchable_function(100)
