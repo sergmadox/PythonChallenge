@@ -1,0 +1,28 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import geoplotlib
+from geoplotlib.utils import DataAccessObject
+
+
+class PositionDot:
+
+    def __init__(self, latitude, longitude):
+        self.latitude = latitude
+        self.longitude = longitude
+
+    def __str__(self):    
+        return '({}, {})'.format(self.latitude, self.longitude)
+
+    def __add__(self, other):
+        return PositionDot((self.latitude + other.latitude), (self.longitude + other.longitude))
+
+    def show_position(self):
+        try:
+            geoplotlib.dot(DataAccessObject({'lat': [self.latitude], 'lon': [self.longitude]}),
+                           point_size=40, color='green')
+            geoplotlib.set_window_size(600, 600)
+            geoplotlib.show()
+        except ValueError:
+            pass
+            
